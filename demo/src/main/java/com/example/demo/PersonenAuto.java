@@ -46,13 +46,9 @@ public class PersonenAuto extends Product{
     }
 
     @Override
-    void setVerhuurStatus(boolean status) {
+    void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
-    }
-
-    @Override
-    void setKlant(Klant klant) {
-        this.klant = klant;
+        this.klant=klant;
     }
 
 }
