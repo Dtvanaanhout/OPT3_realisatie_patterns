@@ -4,12 +4,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class LoginController {
-
+    static Medewerker loginMedewerker;
+    
+    @FXML
+    private TextField UserNameTextField;
+    
     @FXML
     private Button LoginButton;
 
@@ -20,6 +25,12 @@ public class LoginController {
         Stage stage = new Stage();
         stage.setTitle("Menu");
         stage.setScene(scene);
-        stage.show();        
+        stage.show();   
+        String naam = UserNameTextField.getText();
+        loginMedewerker = new Medewerker(naam);
+        }   
+
+        public static Medewerker getLoginMedewerker(){
+            return loginMedewerker;
+        }
     }
-}
