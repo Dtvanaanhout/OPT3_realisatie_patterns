@@ -6,4 +6,5 @@ abstract class Product{
     abstract String getNaam();
     abstract boolean getVerhuurStatus();
     abstract void setVerhuurStatus(boolean status);
-}
+    abstract void setKlant(Klant klant);
+    }

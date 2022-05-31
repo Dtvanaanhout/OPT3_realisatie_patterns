@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 
 public class DetailController {
     Product product;
+    
     @FXML
     private ResourceBundle resources;
 
@@ -15,12 +16,12 @@ public class DetailController {
     @FXML
     void initialize() {
         getProductenSelected();
-        
         }
     public void getProductenSelected(){
          product = OverzichtController.product;
             
         }
+        
     }
 
 
