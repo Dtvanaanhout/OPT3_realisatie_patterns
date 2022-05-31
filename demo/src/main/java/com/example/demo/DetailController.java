@@ -5,8 +5,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 
 public class DetailController {
-    OverzichtController OC = new OverzichtController();
-    Product product = OC.producten.get(OC.lijstProducten.getSelectionModel().getSelectedIndex());
+    Product product;
     @FXML
     private ResourceBundle resources;
 
@@ -15,7 +14,12 @@ public class DetailController {
 
     @FXML
     void initialize() {
-    System.out.println(product.getNaam());
+        getProductenSelected();
+        
+        }
+    public void getProductenSelected(){
+         product = OverzichtController.product;
+            
         }
     }
 
