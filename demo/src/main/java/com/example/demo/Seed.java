@@ -10,15 +10,18 @@ public class Seed {
         addProducten();
     }
     public void addProducten(){
-        producten.add(new VrachtAuto(3500,  5500));
-        producten.add(new VrachtAuto(5500,  6500));
-        producten.add(new VrachtAuto(7500,  7500));
-        producten.add(new Boormachine("Klopboormachine", "Makita" , 5 , 1.00));
-        producten.add(new Boormachine("Accuboormachine", "Milwaukee" , 5 , 1.00));
-        producten.add(new Boormachine("Boorhamer", "DeWalt", 5 , 1.00));
-        producten.add(new PersonenAuto("BMW",  1350));
-        producten.add(new PersonenAuto("Nissan",  1450));
-        producten.add(new PersonenAuto("Mercedes",  1550));
+    
+        producten.add(ProductFactory.PERSONENAUTO_FACTORY.createProduct("BMW",  "1350",  50,  1.00));
+        producten.add(ProductFactory.PERSONENAUTO_FACTORY.createProduct("Audi",  "1450",  50,  1.00));
+        producten.add(ProductFactory.PERSONENAUTO_FACTORY.createProduct("VW",  "1550",  50,  1.00));
+
+        producten.add(ProductFactory.VRACHTAUTO_FACTORY.createProduct("3500",  "5500",  0.10,  0.01));
+        producten.add(ProductFactory.VRACHTAUTO_FACTORY.createProduct("5500",  "6500",  0.10,  0.01));
+        producten.add(ProductFactory.VRACHTAUTO_FACTORY.createProduct("7500",  "7500",  0.10,  0.01));
+
+        producten.add(ProductFactory.BOORMACHINE_FACTORY.createProduct("Klopboormachine", "Makita", 5,  1.00));
+        producten.add(ProductFactory.BOORMACHINE_FACTORY.createProduct("Accuboormachine", "DeWalt", 5,  1.00));
+        producten.add(ProductFactory.BOORMACHINE_FACTORY.createProduct("Boorhamer", "Makita", 5,  1.00));
 
     }
 

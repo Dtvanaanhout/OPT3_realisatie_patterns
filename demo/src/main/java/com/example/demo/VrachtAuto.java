@@ -1,19 +1,20 @@
 package com.example.demo;
 
-import java.util.ArrayList;
+
 
 public class VrachtAuto extends Product{
     
     private double laadvermogen;
     private double gewicht;
-    private double verzekering = 0.01;
-    private double prijsPerDag = 0.10;
+    private double verzekering;
+    private double prijsPerDag;
     private boolean verhuurStatus=false;
     Klant klant;
-    ArrayList<Observer> observers = new ArrayList<>();
-    public VrachtAuto(double laadvermogen, double gewicht){
+    public VrachtAuto(double laadvermogen, double gewicht, double prijsPerDag, double verzekering){
         this.laadvermogen = laadvermogen;
         this.gewicht = gewicht;
+        this.prijsPerDag = prijsPerDag;
+        this.verzekering=verzekering;
     }
 
     public double getprijs(int aantalDagenHuren , boolean isVerzekerd){
@@ -64,23 +65,5 @@ public class VrachtAuto extends Product{
         return klant;
     }
 
-    @Override
-    public void attach(Observer o) {
-        observers.add(o);
-        
-    }
-
-    @Override
-    public void detach(Observer o) {
-       observers.remove(o);
-        
-    }
-
-    @Override
-    public void notifyObservers() {
-        for(Observer observer : observers){
-            observer.update(this);
-        }
-        
-    }
+   
 }

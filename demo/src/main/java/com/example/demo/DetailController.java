@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
-public class DetailController implements Observer{
+public class DetailController{
     Product product;
     @FXML
     private Button VerhuurButton;
@@ -109,18 +109,8 @@ public class DetailController implements Observer{
         int aantalDagen = Integer.parseInt(aantalDagenVerhurenTextField.getText());
         totalePrijsKosten.setText(product.getprijs(aantalDagen, verzekeringCheckBox.isSelected()) + " euro");
     }
+    
 
-    @Override
-    public void update(Object o) {
-       boolean temp = product.getVerhuurStatus();
-        if(temp != OverzichtController.product.getVerhuurStatus()){
-            setGegevensVerhuurd();
-           setProductGegevens();
-       }
     }
-
-
-}
-
 
 

@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 public class OverzichtController  {
 Seed seed = new Seed();
 static Product product;
-ArrayList<Product> producten = seed.getProducten();
+ ArrayList<Product> producten = seed.getProducten();
    
     @FXML ListView<String> lijstProducten;
 

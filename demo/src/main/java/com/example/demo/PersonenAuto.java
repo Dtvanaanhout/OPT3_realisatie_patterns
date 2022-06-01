@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import java.util.Observer;
+
 
 public class PersonenAuto extends Product{
     private String merk;
@@ -10,13 +10,14 @@ public class PersonenAuto extends Product{
     private boolean verhuurStatus = false;
     Klant klant;
     
-    public PersonenAuto(String merk, double gewicht){
+    public PersonenAuto(String merk, double gewicht, double prijsPerDag, double verzekering){
         this.merk = merk;
         this.gewicht = gewicht;
-       
+        this.prijsPerDag=prijsPerDag;
+        this.verzekering=verzekering;
     }
 
-    @Override
+ 
     double getprijs(int aantalDagenHuren, boolean isVerzekerd) {
         double totaal = prijsPerDag * aantalDagenHuren;
         if (isVerzekerd) {
@@ -61,26 +62,6 @@ public class PersonenAuto extends Product{
     Klant getKlant() {
         return klant;
     }
-
-    @Override
-    public void addObserver(Observer observer) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void removeObserver(Observer observer) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void notifyObservers() {
-        
-        
-
-    }
-
 
 
 }
