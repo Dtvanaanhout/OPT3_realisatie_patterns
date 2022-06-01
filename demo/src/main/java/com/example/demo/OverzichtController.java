@@ -11,7 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class OverzichtController {
+public class OverzichtController  {
 Seed seed = new Seed();
 static Product product;
 ArrayList<Product> producten = seed.getProducten();
@@ -57,5 +57,6 @@ ArrayList<Product> producten = seed.getProducten();
         stage.setScene(scene);
         stage.show();   
     }
+   
 }
  

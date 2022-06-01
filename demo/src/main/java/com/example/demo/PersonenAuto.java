@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Observer;
+
 public class PersonenAuto extends Product{
     private String merk;
     private double gewicht;
@@ -59,5 +61,26 @@ public class PersonenAuto extends Product{
     Klant getKlant() {
         return klant;
     }
+
+    @Override
+    public void addObserver(Observer observer) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void notifyObservers() {
+        
+        
+
+    }
+
+
 
 }

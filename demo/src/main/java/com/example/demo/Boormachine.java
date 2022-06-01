@@ -1,5 +1,7 @@
 package com.example.demo;
 
+
+
 public class Boormachine extends Product {
     private String type;
     private String merk;
@@ -62,5 +64,25 @@ public class Boormachine extends Product {
     Klant getKlant() {
         return klant;
     }
-}
+
+    @Override
+    public void attach(Observer o) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void detach(Observer o) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void notifyObservers() {
+        // TODO Auto-generated method stub
+        
+    }
+
+    }
+
 

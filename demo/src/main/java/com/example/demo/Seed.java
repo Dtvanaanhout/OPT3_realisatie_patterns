@@ -14,8 +14,8 @@ public class Seed {
         producten.add(new VrachtAuto(5500,  6500));
         producten.add(new VrachtAuto(7500,  7500));
         producten.add(new Boormachine("Klopboormachine", "Makita" , 5 , 1.00));
-        producten.add(new Boormachine("Fuel", "Milwaukee" , 5 , 1.00));
-        producten.add(new Boormachine("schroeftol", "DeWalt", 5 , 1.00));
+        producten.add(new Boormachine("Accuboormachine", "Milwaukee" , 5 , 1.00));
+        producten.add(new Boormachine("Boorhamer", "DeWalt", 5 , 1.00));
         producten.add(new PersonenAuto("BMW",  1350));
         producten.add(new PersonenAuto("Nissan",  1450));
         producten.add(new PersonenAuto("Mercedes",  1550));

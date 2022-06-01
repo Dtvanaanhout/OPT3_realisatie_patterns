@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+
 public class VrachtAuto extends Product{
     
     private double laadvermogen;
@@ -8,7 +10,7 @@ public class VrachtAuto extends Product{
     private double prijsPerDag = 0.10;
     private boolean verhuurStatus=false;
     Klant klant;
-   
+    ArrayList<Observer> observers = new ArrayList<>();
     public VrachtAuto(double laadvermogen, double gewicht){
         this.laadvermogen = laadvermogen;
         this.gewicht = gewicht;
@@ -60,5 +62,25 @@ public class VrachtAuto extends Product{
     @Override
     Klant getKlant() {
         return klant;
+    }
+
+    @Override
+    public void attach(Observer o) {
+        observers.add(o);
+        
+    }
+
+    @Override
+    public void detach(Observer o) {
+       observers.remove(o);
+        
+    }
+
+    @Override
+    public void notifyObservers() {
+        for(Observer observer : observers){
+            observer.update(this);
+        }
+        
     }
 }

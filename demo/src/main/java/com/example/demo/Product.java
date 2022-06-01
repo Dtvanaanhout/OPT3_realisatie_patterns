@@ -1,6 +1,7 @@
 package com.example.demo;
 
-abstract class Product{
+
+abstract class Product implements Subject {
     abstract double getprijs(int aantalDagenHuren , boolean isVerzekerd);
     abstract String getDiscription();
     abstract String getNaam();
