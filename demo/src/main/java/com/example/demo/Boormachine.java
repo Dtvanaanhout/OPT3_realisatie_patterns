@@ -49,6 +49,16 @@ public class Boormachine extends Product {
     void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
         this.klant=klant;
+    }
+
+    @Override
+    String getVerzekeringsInformatie() {
+        return "De verzekering is : " + verzekering + " euro per dag";
     }    
+    
+    @Override
+    Klant getKlant() {
+        return klant;
+    }
 }
 

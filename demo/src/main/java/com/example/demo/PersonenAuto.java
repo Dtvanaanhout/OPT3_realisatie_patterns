@@ -36,12 +36,15 @@ public class PersonenAuto extends Product{
 
     @Override
     String getNaam() {
-        return "Personenauto van het " + merk + "met een van gewicht :" + gewicht;
+        return "Auto merk : " + merk + " Gewicht :" + gewicht;
+    }
+    @Override
+    public String getVerzekeringsInformatie(){
+        return "De verzekering is : " + verzekering + " euro per kg";
     }
 
     @Override
     boolean getVerhuurStatus() {
-       
         return verhuurStatus;
     }
 
@@ -49,6 +52,11 @@ public class PersonenAuto extends Product{
     void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
         this.klant=klant;
+    }
+
+    @Override
+    Klant getKlant() {
+        return klant;
     }
 
 }

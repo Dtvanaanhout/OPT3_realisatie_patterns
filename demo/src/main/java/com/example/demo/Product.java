@@ -5,5 +5,8 @@ abstract class Product{
     abstract String getDiscription();
     abstract String getNaam();
     abstract boolean getVerhuurStatus();
+    abstract String getVerzekeringsInformatie();
     abstract void setVerhuurStatus(boolean status , Klant klant);
+    abstract Klant getKlant();
+    
     }

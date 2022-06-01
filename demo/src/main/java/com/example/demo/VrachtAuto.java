@@ -32,7 +32,7 @@ public class VrachtAuto extends Product{
 
     @Override
     String getDiscription() {
-        return "Vrachtauto met een laad vermogen van  : " + laadvermogen + "KG met een gewicht van : " + gewicht + " kg";
+        return "Vrachtauto met een laad vermogen van: " + laadvermogen + "KG met een gewicht van : " + gewicht + " kg";
     }
 
     @Override
@@ -49,5 +49,16 @@ public class VrachtAuto extends Product{
     @Override
     void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
+        this.klant=klant;
+    }
+
+    @Override
+    String getVerzekeringsInformatie() {
+        return "De verzekering is : " + verzekering + " euro per kg gewicht";
+    }
+
+    @Override
+    Klant getKlant() {
+        return klant;
     }
 }
