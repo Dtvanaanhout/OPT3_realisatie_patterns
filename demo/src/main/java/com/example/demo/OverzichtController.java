@@ -1,7 +1,5 @@
 package com.example.demo;
 
-
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -15,14 +13,17 @@ import javafx.stage.Stage;
 
 public class OverzichtController {
 Seed seed = new Seed();
-Product product;
+static Product product;
 ArrayList<Product> producten = seed.getProducten();
    
     @FXML ListView<String> lijstProducten;
+
     @FXML
     private Text description;
+
     @FXML
     private Text verhuurStatus;
+
     @FXML
     private void initialize() {
         fillList();
@@ -43,8 +44,7 @@ ArrayList<Product> producten = seed.getProducten();
             public void handle(javafx.scene.input.MouseEvent event) {
                 verhuurStatus.setText(producten.get(lijstProducten.getSelectionModel().getSelectedIndex()).getVerhuurStatus() + "");
                 description.setText(producten.get(lijstProducten.getSelectionModel().getSelectedIndex()).getDiscription());
-                product=producten.get(lijstProducten.getSelectionModel().getSelectedIndex());
-                System.out.println(product.getNaam());
+                product = producten.get(lijstProducten.getSelectionModel().getSelectedIndex());
             }
         });
     }
@@ -53,7 +53,7 @@ ArrayList<Product> producten = seed.getProducten();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Detail.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 600);
         Stage stage = new Stage();
-        stage.setTitle("Detail");
+        stage.setTitle(product.getNaam());
         stage.setScene(scene);
         stage.show();   
     }

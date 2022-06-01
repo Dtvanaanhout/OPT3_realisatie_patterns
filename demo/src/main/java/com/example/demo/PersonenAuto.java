@@ -6,7 +6,7 @@ public class PersonenAuto extends Product{
     private double verzekering = 0.01;
     private double prijsPerDag = 50.00;
     private boolean verhuurStatus = false;
-    
+    Klant klant;
     public PersonenAuto(String merk, double gewicht){
         this.merk = merk;
         this.gewicht = gewicht;
@@ -46,8 +46,9 @@ public class PersonenAuto extends Product{
     }
 
     @Override
-    void setVerhuurStatus(boolean status) {
+    void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
+        this.klant=klant;
     }
 
 }

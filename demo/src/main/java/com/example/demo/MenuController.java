@@ -6,9 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MenuController {
+    Medewerker medewerker;
+    @FXML
+    private Text LoginMedewerkerText;
 
     @FXML
     private Button OverzichtButton;
@@ -18,7 +22,12 @@ public class MenuController {
 
     @FXML
     private Button uitlogButton;
-
+    
+    @FXML
+    void initialize() {
+         medewerker = LoginController.getLoginMedewerker();   
+            LoginMedewerkerText.setText(medewerker.getNaam());
+    }
     @FXML
     public void uitlogButtonClick(){
         Stage stage = (Stage) uitlogButton.getScene().getWindow();
@@ -32,6 +41,5 @@ public class MenuController {
         stage.setTitle("Overzicht");
         stage.setScene(scene);
         stage.show();   
-        
     }
 }

@@ -6,7 +6,7 @@ public class Boormachine extends Product {
     private double verzekering = 1.0;
     private double prijsPerDag = 5.00;
     private boolean verhuurStatus = false;
-
+    Klant klant;
     public Boormachine(String type, String merk) {
         this.type = type;
         this.merk = merk;
@@ -46,9 +46,9 @@ public class Boormachine extends Product {
     }
 
     @Override
-    void setVerhuurStatus(boolean status) {
+    void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
-    }
-    
+        this.klant=klant;
+    }    
 }
 

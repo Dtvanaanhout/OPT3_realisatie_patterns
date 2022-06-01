@@ -7,7 +7,7 @@ public class VrachtAuto extends Product{
     private double verzekering = 0.01;
     private double prijsPerDag = 0.10;
     private boolean verhuurStatus=false;
-   
+    Klant klant;
    
     public VrachtAuto(double laadvermogen, double gewicht){
         this.laadvermogen = laadvermogen;
@@ -47,7 +47,7 @@ public class VrachtAuto extends Product{
     }
 
     @Override
-    void setVerhuurStatus(boolean status) {
+    void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
     }
 }

@@ -5,13 +5,21 @@ import javafx.fxml.FXML;
 
 public class DetailController {
     OverzichtController OC = new OverzichtController();
-    Product product = OC.product;
+
+    
+    @FXML
+    private ResourceBundle resources;
 
 
     @FXML
     void initialize() {
-    System.out.println(product.getNaam());
+        getProductenSelected();
         }
+    public void getProductenSelected(){
+       
+            
+        }
+        
     }
 
 
