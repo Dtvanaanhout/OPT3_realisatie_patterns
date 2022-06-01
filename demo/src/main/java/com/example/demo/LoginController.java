@@ -10,13 +10,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
-     Medewerker loginMedewerker;
+      private static Medewerker loginMedewerker;
     
     @FXML
     private TextField UserNameTextField;
     
     @FXML
     private Button LoginButton;
+    
+    @FXML
+    void initialize() {
+    }
 
     @FXML
     protected void onLoginClick() throws IOException {
@@ -26,15 +30,11 @@ public class LoginController {
         stage.setTitle("Menu");
         stage.setScene(scene);
         stage.show();   
-        setLoginMedewerker(new Medewerker(UserNameTextField.getText()));
-        }   
+        loginMedewerker = new Medewerker(UserNameTextField.getText());
+        System.out.println(loginMedewerker.getNaam());
+         }
 
-        public  Medewerker getLoginMedewerker(){
-            return loginMedewerker;
-        }
-
-        public void setLoginMedewerker(Medewerker loginMedewerker) {
-            this.loginMedewerker = loginMedewerker;
-            System.out.println(loginMedewerker.getNaam());
-        }
+         public static Medewerker getLoginMedewerker() {
+             return loginMedewerker;
+         }
     }

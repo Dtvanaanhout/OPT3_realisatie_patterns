@@ -10,7 +10,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MenuController {
-    
+    Medewerker loginMedewerker;
     @FXML
     private Text LoginMedewerkerText;
 
@@ -25,8 +25,9 @@ public class MenuController {
     
     @FXML
     void initialize() {
-           LoginController LC = new LoginController();
            
+           loginMedewerker = LoginController.getLoginMedewerker();
+           System.out.println(loginMedewerker.getNaam());
     }
     @FXML
     public void uitlogButtonClick(){
