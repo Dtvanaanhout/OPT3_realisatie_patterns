@@ -9,28 +9,35 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.DetailController">
    <children>
-      <Text fx:id="naamProductText" layoutX="194.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Naam Product">
+      <Text fx:id="naamProductText" layoutX="38.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Naam Product">
          <font>
             <Font size="24.0" />
          </font></Text>
-      <Text layoutX="194.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuurd : " />
-      <Text layoutX="194.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prijs per dag : " />
-      <Text layoutX="194.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten verzekering :" />
-      <Text fx:id="prijsPerDagText" layoutX="277.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prijs per dag" />
-      <Text fx:id="isVerhuurdText" layoutX="265.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuurstatus text" />
-      <Text fx:id="kostenVerzekeringText" layoutX="319.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten verzekering per dag" />
+      <Text layoutX="28.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuurd : " />
+      <Text layoutX="28.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prijs per dag : " />
+      <Text layoutX="28.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten verzekering :" />
+      <Text fx:id="prijsPerDagText" layoutX="122.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prijs per dag" />
+      <Text fx:id="isVerhuurdText" layoutX="106.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuurstatus text" />
+      <Text fx:id="kostenVerzekeringText" layoutX="159.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten verzekering per dag" />
       <Button fx:id="retourButton" layoutX="199.0" layoutY="332.0" mnemonicParsing="false" onAction="#retourButtonClicked" text="Retour" />
-      <Text fx:id="gehuurdDoorTextField" layoutX="194.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="gehuurd door : " />
-      <Text fx:id="klantInfoText" layoutX="287.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Klant text" />
-      <Button fx:id="VerhuurButton" layoutX="300.0" layoutY="332.0" mnemonicParsing="false" text="Verhuur" />
-      <TextField fx:id="voornaamKlantTextField" layoutX="256.0" layoutY="375.0" text="Voornaam Klant" />
-      <TextField fx:id="achternaamKlantTextField" layoutX="258.0" layoutY="419.0" text="Achternaam Klant" />
-      <CheckBox fx:id="verzekeringCheckBox" layoutX="444.0" layoutY="388.0" mnemonicParsing="false" text="Verzekering?" />
-      <TextField fx:id="aantalDagenVerhurenTextField" layoutX="256.0" layoutY="457.0" text="Aantal Dagen verhuren" />
+      <Text fx:id="gehuurdDoorTextField" layoutX="28.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="gehuurd door : " />
+      <Text fx:id="klantInfoText" layoutX="131.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Klant text" />
       <Pane layoutX="14.0" layoutY="383.0" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Text fx:id="beschrijvingText" layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="beschrijving text" />
+            <Text fx:id="beschrijvingText" layoutX="10.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="beschrijving text" wrappingWidth="88.99087524414062" />
             <Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="beschrijving : " />
+         </children>
+      </Pane>
+      <Pane fx:id="verhuurPane" layoutX="287.0" layoutY="332.0" prefHeight="269.0" prefWidth="335.0">
+         <children>
+            <TextField fx:id="aantalDagenVerhurenTextField" layoutX="7.0" layoutY="57.0" text="Aantal Dagen verhuren" />
+            <Button fx:id="VerhuurButton" mnemonicParsing="false" onAction="#VerhuurButtonClicked" text="Verhuur" />
+            <TextField fx:id="achternaamKlantTextField" layoutX="7.0" layoutY="135.0" text="Achternaam Klant" />
+            <TextField fx:id="voornaamKlantTextField" layoutX="7.0" layoutY="98.0" text="Voornaam Klant" />
+            <CheckBox fx:id="verzekeringCheckBox" layoutX="14.0" layoutY="172.0" mnemonicParsing="false" text="Verzekering?" />
+            <Text layoutX="168.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Totale Kosten verhuur :" />
+            <Text fx:id="totalePrijsKosten" layoutX="174.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
+            <Button fx:id="berekenPrijsButton" layoutX="14.0" layoutY="218.0" mnemonicParsing="false" onAction="#berekenPrijsButtonIsClicked" text="bereken verhuurprijs totaal" />
          </children>
       </Pane>
    </children>

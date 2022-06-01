@@ -3,13 +3,15 @@ package com.example.demo;
 public class Boormachine extends Product {
     private String type;
     private String merk;
-    private double verzekering = 1.0;
-    private double prijsPerDag = 5.00;
+    private double verzekering;
+    private double prijsPerDag;
     private boolean verhuurStatus = false;
     Klant klant;
-    public Boormachine(String type, String merk) {
+    public Boormachine(String type, String merk , double prijsPerDag , double verzekering){
         this.type = type;
         this.merk = merk;
+        this.prijsPerDag = prijsPerDag;
+        this.verzekering = verzekering;
     }
 
     public double getprijs(int aantalDagenHuren, boolean isVerzekerd) {

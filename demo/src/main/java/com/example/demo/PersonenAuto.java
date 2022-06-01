@@ -7,6 +7,7 @@ public class PersonenAuto extends Product{
     private double prijsPerDag = 50.00;
     private boolean verhuurStatus = false;
     Klant klant;
+    
     public PersonenAuto(String merk, double gewicht){
         this.merk = merk;
         this.gewicht = gewicht;
