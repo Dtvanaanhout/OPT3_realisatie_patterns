@@ -10,7 +10,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
-      private static Medewerker loginMedewerker;
     
     @FXML
     private TextField UserNameTextField;
@@ -20,6 +19,7 @@ public class LoginController {
     
     @FXML
     void initialize() {
+         
     }
 
     @FXML
@@ -30,11 +30,5 @@ public class LoginController {
         stage.setTitle("Menu");
         stage.setScene(scene);
         stage.show();   
-        loginMedewerker = new Medewerker(UserNameTextField.getText());
-        System.out.println(loginMedewerker.getNaam());
-         }
-
-         public static Medewerker getLoginMedewerker() {
-             return loginMedewerker;
-         }
+         } 
     }

@@ -25,9 +25,6 @@ public class MenuController {
     
     @FXML
     void initialize() {
-           
-           loginMedewerker = LoginController.getLoginMedewerker();
-           System.out.println(loginMedewerker.getNaam());
     }
     @FXML
     public void uitlogButtonClick(){
