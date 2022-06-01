@@ -1,23 +1,19 @@
 package com.example.demo;
 
-
 import javafx.fxml.FXML;
 
 public class DetailController {
     OverzichtController OC = new OverzichtController();
-
-    
-    @FXML
-    private ResourceBundle resources;
-
-
+    Product product;
     @FXML
     void initialize() {
-        getProductenSelected();
-        }
-    public void getProductenSelected(){
+        
        
-            
+    }
+    
+        public Product getProductenSelected(){
+    
+            return OC.product;
         }
         
     }
