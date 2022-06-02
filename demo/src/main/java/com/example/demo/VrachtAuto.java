@@ -2,7 +2,7 @@ package com.example.demo;
 
 
 
-public class VrachtAuto extends Product{
+public class VrachtAuto extends Product  {
     
     private double laadvermogen;
     private double gewicht;
@@ -65,6 +65,8 @@ public class VrachtAuto extends Product{
     Klant getKlant() {
         return klant;
     }
+
+
 
    
 }

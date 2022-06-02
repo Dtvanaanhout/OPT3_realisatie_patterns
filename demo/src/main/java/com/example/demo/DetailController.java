@@ -1,6 +1,10 @@
 package com.example.demo;
 
 
+
+
+
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -8,8 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
-public class DetailController{
+public class DetailController implements Observer{
     Product product;
+    Medewerker medewerker;
     @FXML
     private Button VerhuurButton;
 
@@ -58,7 +63,14 @@ public class DetailController{
     private Pane verhuurPane;
 
     @FXML
+    private Text MedewerkerVerhuur;
+
+    @FXML
+    private Text verhuurdDoorText;
+
+    @FXML
     void initialize() {
+        medewerker=LoginController.getMedewerkerIngelogd();
         setProductGegevens();
         }
 
@@ -78,11 +90,13 @@ public class DetailController{
 
     public void setGegevensVerhuurd(){
         isVerhuurdText.setText("Verhuurd");
+        verhuurdDoorText.setVisible(true);
         gehuurdDoorTextField.setVisible(true);
         klantInfoText.setVisible(true);
         klantInfoText.setText(product.getKlant().getVoorNaam() + " " + product.getKlant().getAchterNaam());
         retourButton.setVisible(true);
         verhuurPane.setVisible(false);
+        MedewerkerVerhuur.setVisible(true);
         
     }
     
@@ -93,6 +107,8 @@ public class DetailController{
         klantInfoText.setVisible(false);
         gehuurdDoorTextField.setVisible(false);
         verhuurPane.setVisible(true);
+        verhuurdDoorText.setVisible(false);
+        MedewerkerVerhuur.setVisible(false);
     }
 
     public void retourButtonClicked(){
@@ -102,15 +118,21 @@ public class DetailController{
 
     public void VerhuurButtonClicked(){
         product.setVerhuurStatus(true, new Klant(voornaamKlantTextField.getText(), achternaamKlantTextField.getText()));    
+        MedewerkerVerhuur.setText(medewerker.getNaam());
         setProductGegevens();
     }
 
     public void berekenPrijsButtonIsClicked(){
         int aantalDagen = Integer.parseInt(aantalDagenVerhurenTextField.getText());
         totalePrijsKosten.setText(product.getprijs(aantalDagen, verzekeringCheckBox.isSelected()) + " euro");
-    }
-    
+        }
 
+    @Override
+    public void update() {
+        System.out.println("UPDATED2222");
+        setProductGegevens();
+        
+        }
     }
 
 

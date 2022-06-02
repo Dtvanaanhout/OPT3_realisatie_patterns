@@ -11,7 +11,7 @@
    <children>
       <Text fx:id="naamProductText" layoutX="38.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Naam Product">
          <font>
-            <Font size="24.0" />
+            <Font size="14.0" />
          </font></Text>
       <Text layoutX="28.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuurd : " />
       <Text layoutX="28.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prijs per dag : " />
@@ -40,5 +40,7 @@
             <Button fx:id="berekenPrijsButton" layoutX="14.0" layoutY="218.0" mnemonicParsing="false" onAction="#berekenPrijsButtonIsClicked" text="bereken verhuurprijs totaal" />
          </children>
       </Pane>
+      <Text fx:id="MedewerkerVerhuur" layoutX="350.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuur medewerker" />
+      <Text fx:id="verhuurdDoorText" layoutX="350.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verhuurd Door : " />
    </children>
 </Pane>

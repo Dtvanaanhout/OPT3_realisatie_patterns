@@ -3,6 +3,7 @@ package com.example.demo;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,11 +12,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class OverzichtController  {
+
+public class OverzichtController{
 Seed seed = new Seed();
 static Product product;
  ArrayList<Product> producten = seed.getProducten();
-   
+
     @FXML ListView<String> lijstProducten;
 
     @FXML
@@ -58,5 +60,9 @@ static Product product;
         stage.show();   
     }
    
-}
+    }
+
+          
+    
+   
  

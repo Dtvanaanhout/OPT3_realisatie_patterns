@@ -1,20 +1,23 @@
 package com.example.demo;
 
+import java.util.ArrayList;
 
 
-public class PersonenAuto extends Product{
+public class PersonenAuto extends Product implements Observable{
     private String merk;
     private double gewicht;
     private double verzekering = 0.01;
     private double prijsPerDag = 50.00;
     private boolean verhuurStatus = false;
     Klant klant;
+    DetailController dc = new DetailController();
     
     public PersonenAuto(String merk, double gewicht, double prijsPerDag, double verzekering){
         this.merk = merk;
         this.gewicht = gewicht;
         this.prijsPerDag=prijsPerDag;
         this.verzekering=verzekering;
+       
     }
 
  
@@ -56,12 +59,17 @@ public class PersonenAuto extends Product{
     void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
         this.klant=klant;
+        notifyObservers();
     }
 
     @Override
     Klant getKlant() {
         return klant;
     }
-
-
+    @Override
+    public void notifyObservers() {
+        System.out.println("UPDATED");
+        dc.update();
+        
+    }
 }
