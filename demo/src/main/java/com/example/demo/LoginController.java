@@ -10,7 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
-    
+    static Medewerker logMedewerker;
+   
     @FXML
     private TextField UserNameTextField;
     
@@ -19,16 +20,26 @@ public class LoginController {
     
     @FXML
     void initialize() {
-         
-    }
+
+    }         
 
     @FXML
     protected void onLoginClick() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Menu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        Stage stage = new Stage();
-        stage.setTitle("Menu");
-        stage.setScene(scene);
-        stage.show();   
+        if (UserNameTextField.getText() != null){
+            setMedewerkerIngelogd(new Medewerker(UserNameTextField.getText()));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Menu.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+            Stage stage = new Stage();
+            stage.setTitle("Menu");
+            stage.setScene(scene);
+            stage.show(); 
+              }
          } 
+
+    public void setMedewerkerIngelogd(Medewerker medewerker) {
+            LoginController.logMedewerker = medewerker;
     }
+    public static Medewerker getMedewerkerIngelogd() {
+        return logMedewerker;
+    }
+}

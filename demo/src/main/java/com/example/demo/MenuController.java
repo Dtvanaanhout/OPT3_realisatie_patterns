@@ -25,6 +25,7 @@ public class MenuController {
     
     @FXML
     void initialize() {
+        setLoginMedewerker();
     }
     
     @FXML
@@ -41,4 +42,9 @@ public class MenuController {
         stage.setScene(scene);
         stage.show();   
     }
+
+    public void setLoginMedewerker(){
+        LoginMedewerkerText.setText("Ingelogd als: " + LoginController.getMedewerkerIngelogd().getNaam());
+    }
+    
 }

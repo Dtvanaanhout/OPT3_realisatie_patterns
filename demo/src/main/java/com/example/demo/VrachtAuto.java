@@ -10,6 +10,7 @@ public class VrachtAuto extends Product{
     private double prijsPerDag;
     private boolean verhuurStatus=false;
     Klant klant;
+    
     public VrachtAuto(double laadvermogen, double gewicht, double prijsPerDag, double verzekering){
         this.laadvermogen = laadvermogen;
         this.gewicht = gewicht;
@@ -20,7 +21,7 @@ public class VrachtAuto extends Product{
     public double getprijs(int aantalDagenHuren , boolean isVerzekerd){
         double totaal = (laadvermogen * prijsPerDag) * aantalDagenHuren;
         if(isVerzekerd){
-            totaal += verzekering * gewicht;
+            totaal += (verzekering * gewicht) * aantalDagenHuren;
         }
         return totaal;
     }
