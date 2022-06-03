@@ -3,6 +3,7 @@ package com.example.demo;
 
 
 abstract class Product implements Observable{
+    
     abstract double getprijs(int aantalDagenHuren , boolean isVerzekerd);
     abstract String getDiscription();
     abstract String getNaam();

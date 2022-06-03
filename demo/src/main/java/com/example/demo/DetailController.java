@@ -1,9 +1,6 @@
 package com.example.demo;
 
-
-
-
-
+import java.util.Observer;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,9 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
-public class DetailController implements Observer{
+public class DetailController implements Observer {
     
-    Product product;
+     Product product;
     Medewerker medewerker;
     @FXML
     private Button VerhuurButton;
@@ -57,6 +54,7 @@ public class DetailController implements Observer{
 
     @FXML
     private TextField voornaamKlantTextField;
+
     @FXML
     private Button berekenPrijsButton;
 
@@ -74,11 +72,13 @@ public class DetailController implements Observer{
         product = OverzichtController.product;
         medewerker=LoginController.getMedewerkerIngelogd();
         setProductGegevens();
+        
+        product.addObserver(this);
         }
 
     public void setProductGegevens(){
-        System.out.println(product);
         beschrijvingText.setText(product.getDiscription());
+        
         naamProductText.setText(product.getNaam());
         prijsPerDagText.setText(product.getprijs(1, false) + " euro");   
         kostenVerzekeringText.setText(product.getVerzekeringsInformatie());
@@ -128,14 +128,14 @@ public class DetailController implements Observer{
         int aantalDagen = Integer.parseInt(aantalDagenVerhurenTextField.getText());
         totalePrijsKosten.setText(product.getprijs(aantalDagen, verzekeringCheckBox.isSelected()) + " euro");
         }
-      
+
+   
 
     @Override
-    public void update() {
-        product = OverzichtController.product;
+    public void update(java.util.Observable arg0, Object arg1) {
+        System.out.println("update");
         setProductGegevens();
-        System.out.println("Update");
-         }
+        }
     }
 
 

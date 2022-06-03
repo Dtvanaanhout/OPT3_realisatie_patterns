@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.Observer;
+
 
 
 public class PersonenAuto extends Product {
@@ -10,8 +12,7 @@ public class PersonenAuto extends Product {
     private double prijsPerDag = 50.00;
     private boolean verhuurStatus = false;
     Klant klant;
-    DetailController dc = new DetailController();
-    
+    ArrayList<Observer> observers = new ArrayList<Observer>();
     public PersonenAuto(String merk, double gewicht, double prijsPerDag, double verzekering){
         this.merk = merk;
         this.gewicht = gewicht;
@@ -66,9 +67,21 @@ public class PersonenAuto extends Product {
     Klant getKlant() {
         return klant;
     }
-    
+
     @Override
     public void notifyObservers() {
-        dc.update();
+        for (Observer observer : observers) {
+            observer.update(null, this);
+        }
+        
     }
+
+
+    @Override
+    public void addObserver(Observer o) {
+        observers.add(o);  
+    }
+
+
+  
 }
