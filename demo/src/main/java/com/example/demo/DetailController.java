@@ -14,7 +14,7 @@ import javafx.scene.text.Text;
 
 public class DetailController implements Observer{
     
-    static Product product;
+    Product product;
     Medewerker medewerker;
     @FXML
     private Button VerhuurButton;
@@ -77,6 +77,7 @@ public class DetailController implements Observer{
         }
 
     public void setProductGegevens(){
+        System.out.println(product);
         beschrijvingText.setText(product.getDiscription());
         naamProductText.setText(product.getNaam());
         prijsPerDagText.setText(product.getprijs(1, false) + " euro");   
@@ -114,13 +115,13 @@ public class DetailController implements Observer{
 
     public void retourButtonClicked(){
         product.setVerhuurStatus(false , null);
-        initialize();
+        setGegevensNietVerhuurd();
     }
 
     public void VerhuurButtonClicked(){
         product.setVerhuurStatus(true, new Klant(voornaamKlantTextField.getText(), achternaamKlantTextField.getText()));    
         MedewerkerVerhuur.setText(medewerker.getNaam());
-        initialize();
+        setGegevensVerhuurd();
     }
 
     public void berekenPrijsButtonIsClicked(){
@@ -131,9 +132,8 @@ public class DetailController implements Observer{
 
     @Override
     public void update() {
-        //setProductGegevens();
-
-        System.out.println(product.getNaam());
+        product = OverzichtController.product;
+        setProductGegevens();
         System.out.println("Update");
          }
     }
