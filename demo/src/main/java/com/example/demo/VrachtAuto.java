@@ -10,7 +10,7 @@ public class VrachtAuto extends Product  {
     private double prijsPerDag;
     private boolean verhuurStatus=false;
     Klant klant;
-    
+    DetailController dc = new DetailController();
     public VrachtAuto(double laadvermogen, double gewicht, double prijsPerDag, double verzekering){
         this.laadvermogen = laadvermogen;
         this.gewicht = gewicht;
@@ -54,6 +54,7 @@ public class VrachtAuto extends Product  {
     void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
         this.klant=klant;
+        notifyObservers();
     }
 
     @Override
@@ -66,7 +67,10 @@ public class VrachtAuto extends Product  {
         return klant;
     }
 
-
+    @Override
+    public void notifyObservers() {
+        dc.update();
+    }
 
    
 }

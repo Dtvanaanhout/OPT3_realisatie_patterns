@@ -13,7 +13,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 public class DetailController implements Observer{
-    Product product;
+    
+    static Product product;
     Medewerker medewerker;
     @FXML
     private Button VerhuurButton;
@@ -70,12 +71,12 @@ public class DetailController implements Observer{
 
     @FXML
     void initialize() {
+        product = OverzichtController.product;
         medewerker=LoginController.getMedewerkerIngelogd();
         setProductGegevens();
         }
 
     public void setProductGegevens(){
-        product = OverzichtController.product;
         beschrijvingText.setText(product.getDiscription());
         naamProductText.setText(product.getNaam());
         prijsPerDagText.setText(product.getprijs(1, false) + " euro");   
@@ -113,26 +114,26 @@ public class DetailController implements Observer{
 
     public void retourButtonClicked(){
         product.setVerhuurStatus(false , null);
-        setProductGegevens();
+        initialize();
     }
 
     public void VerhuurButtonClicked(){
         product.setVerhuurStatus(true, new Klant(voornaamKlantTextField.getText(), achternaamKlantTextField.getText()));    
         MedewerkerVerhuur.setText(medewerker.getNaam());
-        setProductGegevens();
+        initialize();
     }
 
     public void berekenPrijsButtonIsClicked(){
         int aantalDagen = Integer.parseInt(aantalDagenVerhurenTextField.getText());
         totalePrijsKosten.setText(product.getprijs(aantalDagen, verzekeringCheckBox.isSelected()) + " euro");
         }
+      
 
     @Override
     public void update() {
-        System.out.println("UPDATED2222");
         setProductGegevens();
-        
-        }
+        System.out.println("Update");
+         }
     }
 
 

@@ -26,10 +26,6 @@ public class Seed {
         producten.add(ProductFactory.BOORMACHINE_FACTORY.createProduct("Klopboormachine", "Makita", 5,  1.00));
         producten.add(ProductFactory.BOORMACHINE_FACTORY.createProduct("Accuboormachine", "DeWalt", 5,  1.00));
         producten.add(ProductFactory.BOORMACHINE_FACTORY.createProduct("Boorhamer", "Makita", 5,  1.00));
-
-        
-       
-        
     }
 
     public ArrayList<Product> getProducten() {

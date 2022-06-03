@@ -9,6 +9,7 @@ public class Boormachine extends Product {
     private double prijsPerDag;
     private boolean verhuurStatus = false;
     Klant klant;
+    DetailController dc = new DetailController();
     public Boormachine(String type, String merk , double prijsPerDag , double verzekering){
         this.type = type;
         this.merk = merk;
@@ -53,6 +54,7 @@ public class Boormachine extends Product {
     void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
         this.klant=klant;
+        notifyObservers();
     }
 
     @Override
@@ -64,6 +66,10 @@ public class Boormachine extends Product {
     Klant getKlant() {
         return klant;
     }
-
+    
+    @Override
+    public void notifyObservers() {
+        dc.update();
+    }
 }
 

@@ -3,7 +3,7 @@ package com.example.demo;
 import java.util.ArrayList;
 
 
-public class PersonenAuto extends Product implements Observable{
+public class PersonenAuto extends Product {
     private String merk;
     private double gewicht;
     private double verzekering = 0.01;
@@ -66,10 +66,9 @@ public class PersonenAuto extends Product implements Observable{
     Klant getKlant() {
         return klant;
     }
+    
     @Override
     public void notifyObservers() {
-        System.out.println("UPDATED");
         dc.update();
-        
     }
 }

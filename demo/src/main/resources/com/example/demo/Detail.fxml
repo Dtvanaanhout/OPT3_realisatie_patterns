@@ -40,7 +40,7 @@
             <Button fx:id="berekenPrijsButton" layoutX="14.0" layoutY="218.0" mnemonicParsing="false" onAction="#berekenPrijsButtonIsClicked" text="bereken verhuurprijs totaal" />
          </children>
       </Pane>
-      <Text fx:id="MedewerkerVerhuur" layoutX="350.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuur medewerker" />
-      <Text fx:id="verhuurdDoorText" layoutX="350.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verhuurd Door : " />
+      <Text fx:id="MedewerkerVerhuur" layoutX="350.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuur medewerker" />
+      <Text fx:id="verhuurdDoorText" layoutX="350.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verhuurd Door : " />
    </children>
 </Pane>
