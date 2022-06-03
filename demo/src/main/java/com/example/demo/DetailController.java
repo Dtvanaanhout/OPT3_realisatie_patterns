@@ -131,7 +131,9 @@ public class DetailController implements Observer{
 
     @Override
     public void update() {
-        setProductGegevens();
+        //setProductGegevens();
+
+        System.out.println(product.getNaam());
         System.out.println("Update");
          }
     }
