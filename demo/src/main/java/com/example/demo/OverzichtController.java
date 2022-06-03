@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 public class OverzichtController{
 Seed seed = new Seed();
-static Product product;
+static Product product = null;
  ArrayList<Product> producten = seed.getProducten();
 
     @FXML ListView<String> lijstProducten;
@@ -29,15 +29,12 @@ static Product product;
     @FXML
     private void initialize() {
         fillList();
+        System.out.println(product);
     }
     public void fillList(){
         for(Product p : producten){
             lijstProducten.getItems().add(p.getNaam());
         }
-    }
-
-    public void fillDescription(Product product){
-        description.setText(product.getDiscription());
     }
 
     public void clickList(){
@@ -57,7 +54,8 @@ static Product product;
         Stage stage = new Stage();
         stage.setTitle(product.getNaam());
         stage.setScene(scene);
-        stage.show();   
+        stage.show();
+        System.out.println(product);
     }
    
     }
