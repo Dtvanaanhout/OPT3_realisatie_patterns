@@ -6,4 +6,6 @@ public abstract class ProductFactory {
     public static final VrachtAutoFactory VRACHTAUTO_FACTORY = new VrachtAutoFactory();
     
     public abstract Product createProduct(String x , String z , double prijsPerDag , double verzekering); 
+    
+    abstract String getNaamTypeProduct();
 }

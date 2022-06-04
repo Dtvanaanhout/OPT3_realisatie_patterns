@@ -11,7 +11,7 @@ import javafx.scene.text.Text;
 
 public class DetailController implements Observer {
     
-     Product product;
+    Product product;
     Medewerker medewerker;
     @FXML
     private Button VerhuurButton;
@@ -68,11 +68,14 @@ public class DetailController implements Observer {
     private Text verhuurdDoorText;
 
     @FXML
+    private Text ingelogdAlsMedewerker;
+
+    @FXML
     void initialize() {
         product = OverzichtController.product;
         medewerker=LoginController.getMedewerkerIngelogd();
+        ingelogdAlsMedewerker.setText("Ingelogd als: " + medewerker.getNaam());
         setProductGegevens();
-        
         product.addObserver(this);
         }
 
@@ -119,7 +122,7 @@ public class DetailController implements Observer {
 
     public void VerhuurButtonClicked(){
         product.setVerhuurStatus(true, new Klant(voornaamKlantTextField.getText(), achternaamKlantTextField.getText()));    
-        MedewerkerVerhuur.setText(medewerker.getNaam());
+        MedewerkerVerhuur.setText(this.medewerker.getNaam());
         setGegevensVerhuurd();
     }
 

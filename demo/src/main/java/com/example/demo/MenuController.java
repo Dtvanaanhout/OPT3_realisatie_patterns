@@ -43,6 +43,16 @@ public class MenuController {
         stage.show();   
     }
 
+    public void BeheerButtonClick() throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Beheer.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+        Stage stage = new Stage();
+        stage.setTitle("Beheer");
+        stage.setScene(scene);
+        stage.show();   
+    }
+
+
     public void setLoginMedewerker(){
         LoginMedewerkerText.setText("Ingelogd als: " + LoginController.getMedewerkerIngelogd().getNaam());
     }

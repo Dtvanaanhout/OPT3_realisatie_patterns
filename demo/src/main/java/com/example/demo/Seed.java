@@ -8,10 +8,11 @@ import java.util.ArrayList;
 public class Seed {
     
     private ArrayList<Product> producten = new ArrayList<Product>();
-    
+    private ArrayList<ProductFactory> soortenProducten= new ArrayList<ProductFactory>();
    
    public Seed(){
         addProducten();
+        addSoortenProducten();
     }
     public void addProducten(){
     
@@ -29,10 +30,18 @@ public class Seed {
 
       
     }
-
+    public void addSoortenProducten(){
+        soortenProducten.add(new PersonenAutoFactory());
+        soortenProducten.add(new VrachtAutoFactory());
+        soortenProducten.add(new BoormachineFactory());
+    }
+    public ArrayList<ProductFactory> getsoortenProducten(){
+        return soortenProducten;
+    }
     public ArrayList<Product> getProducten() {
        return producten;
     }
 
+    
    
 }
