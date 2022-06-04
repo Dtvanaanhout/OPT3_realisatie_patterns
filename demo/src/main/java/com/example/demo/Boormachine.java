@@ -11,6 +11,7 @@ public class Boormachine extends Product {
     private boolean verhuurStatus = false;
     Klant klant;
     ArrayList<Observer> observers = new ArrayList<Observer>();
+    
     public Boormachine(String type, String merk , double prijsPerDag , double verzekering){
         this.type = type;
         this.merk = merk;

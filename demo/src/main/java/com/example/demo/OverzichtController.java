@@ -14,9 +14,10 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
-public class OverzichtController implements Observer{
+public class OverzichtController implements Observer {
 Seed seed = new Seed();
 static Product product;
+BeheerController beheerController;
  ArrayList<Product> producten;
 
     @FXML ListView<String> lijstProducten;
@@ -29,11 +30,11 @@ static Product product;
 
     @FXML
     private void initialize() {
-            producten = seed.getProducten();
-            fillList();
-            seed.addObserver(this);
+        fillList();
+        beheerController.addObserver(this);
     }
     public void fillList(){
+        producten = seed.getProducten();
         for(Product p : producten){
             lijstProducten.getItems().add(p.getNaam());
         }
@@ -52,7 +53,7 @@ static Product product;
     }
 
     public void getDetailScherm() throws IOException{
-    
+        
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Detail.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 600);
         Stage stage = new Stage();
@@ -63,10 +64,10 @@ static Product product;
         }
     @Override
     public void update(Observable arg0, Object arg1) {
-        seed.getProducten();
+        System.out.println("update");
         fillList();
-        System.out.println("UPDATED");
-     }
+        
+        }
     }
 
           

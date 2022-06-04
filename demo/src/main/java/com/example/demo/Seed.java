@@ -6,11 +6,11 @@ import java.util.Observer;
 
 
 
-public class Seed implements Observable{
+public class Seed {
     
     private ArrayList<Product> producten = new ArrayList<Product>();
     private ArrayList<ProductFactory> soortenProducten= new ArrayList<ProductFactory>();
-    private final ArrayList<Observer> observers = new ArrayList<Observer>();
+    
 
    public Seed(){
 
@@ -18,8 +18,6 @@ public class Seed implements Observable{
         addSoortenProducten();
 
     }
-
-
     public void addProducten(){
     
         producten.add(ProductFactory.PERSONENAUTO_FACTORY.createProduct("BMW",  "1350"));
@@ -50,20 +48,7 @@ public class Seed implements Observable{
 
     public void addProductenToArray(Product product){
         producten.add(product);
-        notifyObservers();
-    }
     
-    @Override
-    public void notifyObservers() {
-        for(Observer observer : observers) {
-            observer.update(null, null);
-        }
-    }
-
-    @Override
-    public void addObserver(Observer o) {
-        observers.add(o);  
-        System.out.println(o + " is toegevoegd aan de observers");
         }
     }
 
