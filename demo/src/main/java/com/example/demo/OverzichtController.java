@@ -2,7 +2,8 @@ package com.example.demo;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
+import java.util.Observable;
+import java.util.Observer;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,8 +14,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
-public class OverzichtController  {
-
+public class OverzichtController implements Observer {
+    
+  
 static Product product;
 static ArrayList<Product> producten = new ArrayList<Product>();
 Seed seed;
@@ -30,11 +32,12 @@ Seed seed;
     @FXML
     private void initialize() {
         fillList();
-
+        
     }
 
     public void fillList(){
         seed = new Seed();
+        seed.addObserver(this);
         producten = seed.getProducten();
         
         for(Product p : producten){
@@ -65,11 +68,11 @@ Seed seed;
         
          }
 
-         public void refreshList(){
-                System.out.println(producten.size());
-                lijstProducten.getItems().clear();
-                fillList();
-         } 
+    @Override
+    public void update(Observable arg0, Object arg1) {
+        fillList();
+    }
+
     }
           
     

@@ -2,18 +2,20 @@ package com.example.demo;
 
 
 import java.util.ArrayList;
+import java.util.Observer;
 
 
 
 
-public class Seed {
+
+public class Seed implements Observable{
 
     private ArrayList<Product> producten = new ArrayList<>();
     private ArrayList<ProductFactory> soortenProducten= new ArrayList<ProductFactory>();
-    
+    ArrayList<Observer> observers = new ArrayList<>();
     
    public Seed(){
-        System.out.println(this);
+        
         addProducten();
         addSoortenProducten();
     }
@@ -47,6 +49,21 @@ public class Seed {
 
     public void addProductenToArray(Product product){
             producten.add(product);
+            notifyObservers();
         }
+    @Override
+    public void addObserver(Observer o) {
+        observers.add(o);
+        System.out.println(observers.size());
+        
+    }
+    @Override
+    public void notifyObservers() {
+        System.out.println(observers.size());  // hoe de fuck is dit 0?
+        for(Observer o : observers){
+            o.update(null, o);
+        }
+        
+    }
     }
 
