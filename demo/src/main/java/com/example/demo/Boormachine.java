@@ -16,7 +16,7 @@ public class Boormachine extends Product {
         this.merk = merk;
         this.prijsPerDag = prijsPerDag;
         this.verzekering = verzekering;
-       
+
     }
 
     public double getprijs(int aantalDagenHuren, boolean isVerzekerd) {
