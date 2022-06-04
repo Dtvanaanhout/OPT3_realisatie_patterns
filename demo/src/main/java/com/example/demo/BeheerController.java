@@ -9,7 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 
-public class BeheerController implements Observable {
+public class BeheerController {
     Seed seed = new Seed();
     ArrayList<ProductFactory> productFactories = seed.getsoortenProducten();
     ArrayList<Observer> observers = new ArrayList<Observer>();
@@ -41,26 +41,9 @@ public class BeheerController implements Observable {
     public void addProduct(){
         String selectedItem = listViewSoortenProducten.getSelectionModel().getSelectedItem();
         for(ProductFactory pf : productFactories) {
-            if(pf.getNaamTypeProduct().equals(selectedItem)) {
-             seed.addProductenToArray(pf.createProduct(TextField1.getText() , TextField2.getText()));
+            if (pf.getNaamTypeProduct().equals(selectedItem)) {
+                seed.addProductenToArray(pf.createProduct(TextField1.getText(), TextField2.getText()));
             }
-            
         }
-        notifyObservers();
     }
-
-    @Override
-    public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(null, this);
-        }
-        
-    }
-
-
-    @Override
-    public void addObserver(Observer o) {
-        observers.add(o);  
-    }
-
 }

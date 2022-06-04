@@ -6,11 +6,11 @@ import java.util.Observer;
 
 
 
-public class Seed {
+public class Seed  implements  Observable{
     
     private ArrayList<Product> producten = new ArrayList<Product>();
     private ArrayList<ProductFactory> soortenProducten= new ArrayList<ProductFactory>();
-    
+    private ArrayList<Observer> observers = new ArrayList<>();
 
    public Seed(){
 
@@ -48,7 +48,24 @@ public class Seed {
 
     public void addProductenToArray(Product product){
         producten.add(product);
-    
+        notifyObservers();
+        }
+
+    @Override
+    public void addObserver(Observer o) {
+        observers.add(o);
+        System.out.println("Observer added");
+        System.out.println(o);
+        System.out.println(observers.size());
+    }
+
+    @Override
+    public void notifyObservers() {
+        System.out.println(observers.size());
+       for(Observer o : observers){
+            o.update(null, null);
+           System.out.println("notify");
         }
     }
+}
 

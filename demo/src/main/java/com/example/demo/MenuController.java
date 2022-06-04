@@ -27,7 +27,7 @@ public class MenuController {
     void initialize() {
         setLoginMedewerker();
     }
-    
+    Seed seed = new Seed();
     @FXML
     public void uitlogButtonClick(){
         Stage stage = (Stage) uitlogButton.getScene().getWindow();
@@ -49,7 +49,7 @@ public class MenuController {
         Stage stage = new Stage();
         stage.setTitle("Beheer");
         stage.setScene(scene);
-        stage.show();   
+        stage.show();
     }
 
 

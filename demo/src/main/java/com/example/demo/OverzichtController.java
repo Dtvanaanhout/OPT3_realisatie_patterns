@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class OverzichtController implements Observer {
 Seed seed = new Seed();
 static Product product;
-BeheerController beheerController;
+
  ArrayList<Product> producten;
 
     @FXML ListView<String> lijstProducten;
@@ -31,7 +31,7 @@ BeheerController beheerController;
     @FXML
     private void initialize() {
         fillList();
-        beheerController.addObserver(this);
+        seed.addObserver(this);
     }
     public void fillList(){
         producten = seed.getProducten();
@@ -66,7 +66,6 @@ BeheerController beheerController;
     public void update(Observable arg0, Object arg1) {
         System.out.println("update");
         fillList();
-        
         }
     }
 
