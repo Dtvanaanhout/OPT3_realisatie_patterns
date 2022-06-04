@@ -71,16 +71,17 @@ public class Boormachine extends Product {
     
     @Override
     public void notifyObservers() {
-            
+        for (Observer observer : observers) {
+            observer.update(null, this);
+        }
         
     }
+
 
     @Override
     public void addObserver(Observer o) {
-        // TODO Auto-generated method stub
-        
+        observers.add(o);  
     }
-
 
 }
 

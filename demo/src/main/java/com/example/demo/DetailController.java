@@ -78,7 +78,6 @@ public class DetailController implements Observer {
 
     public void setProductGegevens(){
         beschrijvingText.setText(product.getDiscription());
-        
         naamProductText.setText(product.getNaam());
         prijsPerDagText.setText(product.getprijs(1, false) + " euro");   
         kostenVerzekeringText.setText(product.getVerzekeringsInformatie());
@@ -128,8 +127,6 @@ public class DetailController implements Observer {
         int aantalDagen = Integer.parseInt(aantalDagenVerhurenTextField.getText());
         totalePrijsKosten.setText(product.getprijs(aantalDagen, verzekeringCheckBox.isSelected()) + " euro");
         }
-
-   
 
     @Override
     public void update(java.util.Observable arg0, Object arg1) {
