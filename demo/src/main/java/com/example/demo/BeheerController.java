@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import java.util.ArrayList;
-import java.util.Observer;
+
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,10 +9,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 
-public class BeheerController {
+public class BeheerController  {
     Seed seed = new Seed();
     ArrayList<ProductFactory> productFactories = seed.getsoortenProducten();
-    ArrayList<Observer> observers = new ArrayList<Observer>();
     
     @FXML
     private ListView<String> listViewSoortenProducten;
@@ -29,7 +28,6 @@ public class BeheerController {
     @FXML
     void initialize() {
         fillListViewSoortenProducten();
-        
     }
 
     public void fillListViewSoortenProducten() {
@@ -41,9 +39,12 @@ public class BeheerController {
     public void addProduct(){
         String selectedItem = listViewSoortenProducten.getSelectionModel().getSelectedItem();
         for(ProductFactory pf : productFactories) {
-            if (pf.getNaamTypeProduct().equals(selectedItem)) {
-                seed.addProductenToArray(pf.createProduct(TextField1.getText(), TextField2.getText()));
+            if(pf.getNaamTypeProduct().equals(selectedItem)) {
+             seed.addProductenToArray(pf.createProduct(TextField1.getText() , TextField2.getText()));
             }
+
         }
+        
     }
+
 }

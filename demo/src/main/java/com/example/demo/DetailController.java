@@ -133,7 +133,6 @@ public class DetailController implements Observer {
 
     @Override
     public void update(java.util.Observable arg0, Object arg1) {
-        System.out.println("update");
         setProductGegevens();
         }
     }
