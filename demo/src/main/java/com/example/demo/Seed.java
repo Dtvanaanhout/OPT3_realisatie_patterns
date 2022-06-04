@@ -10,7 +10,8 @@ public class Seed implements Observable{
     
     private ArrayList<Product> producten = new ArrayList<Product>();
     private ArrayList<ProductFactory> soortenProducten= new ArrayList<ProductFactory>();
-    private ArrayList<Observer> observers = new ArrayList<Observer>();
+    private final ArrayList<Observer> observers = new ArrayList<Observer>();
+
    public Seed(){
 
         addProducten();
@@ -54,8 +55,7 @@ public class Seed implements Observable{
     
     @Override
     public void notifyObservers() {
-        System.out.println("producten aangepast");
-        for(Observer observer : observers){
+        for(Observer observer : observers) {
             observer.update(null, null);
         }
     }
@@ -63,7 +63,7 @@ public class Seed implements Observable{
     @Override
     public void addObserver(Observer o) {
         observers.add(o);  
-
+        System.out.println(o + " is toegevoegd aan de observers");
         }
     }
 

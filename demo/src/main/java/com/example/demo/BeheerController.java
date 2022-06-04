@@ -27,8 +27,9 @@ public class BeheerController {
     @FXML
     void initialize() {
         fillListViewSoortenProducten();
+        
     }
-    
+
     public void fillListViewSoortenProducten() {
         for(ProductFactory pf : productFactories) {
             listViewSoortenProducten.getItems().add(pf.getNaamTypeProduct());
