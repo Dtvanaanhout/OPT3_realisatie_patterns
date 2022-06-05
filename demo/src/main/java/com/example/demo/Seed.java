@@ -12,7 +12,7 @@ public class Seed implements Observable{
 
     private ArrayList<Product> producten = new ArrayList<>();
     private ArrayList<ProductFactory> soortenProducten= new ArrayList<ProductFactory>();
-    ArrayList<Observer> observers = new ArrayList<>();
+    private final ArrayList<Observer> observers = new ArrayList<>();
     
    public Seed(){
         
