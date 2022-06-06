@@ -53,17 +53,13 @@ public class Seed implements Observable{
         }
     @Override
     public void addObserver(Observer o) {
-        observers.add(o);
-        System.out.println(observers.size());
-        
+        observers.add(o); 
     }
     @Override
     public void notifyObservers() {
-        System.out.println(observers.size());  // hoe de fuck is dit 0?
-        for(Observer o : observers){
-            o.update(null, o);
-        }
-        
+        for(Observer o : observers) {
+            o.update(null, null);
+        }  
     }
-    }
+}
 

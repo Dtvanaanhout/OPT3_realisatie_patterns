@@ -25,7 +25,7 @@ public class PersonenAuto extends Product {
     double getprijs(int aantalDagenHuren, boolean isVerzekerd) {
         double totaal = prijsPerDag * aantalDagenHuren;
         if (isVerzekerd) {
-            totaal += verzekering * gewicht;
+            totaal += (verzekering * gewicht) * aantalDagenHuren;
         }
         return totaal;
     }

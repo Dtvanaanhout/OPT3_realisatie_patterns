@@ -18,10 +18,6 @@ public class LoginController {
     @FXML
     private Button LoginButton;
     
-    @FXML
-    void initialize() {
-
-    }         
 
     @FXML
     protected void onLoginClick() throws IOException {

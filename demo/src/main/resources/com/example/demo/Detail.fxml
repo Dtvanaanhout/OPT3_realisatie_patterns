@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.DetailController">
    <children>
-      <Text fx:id="naamProductText" layoutX="38.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Naam Product">
+      <Text fx:id="naamProductText" layoutX="28.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Naam Product">
          <font>
             <Font size="14.0" />
          </font></Text>
@@ -42,7 +42,7 @@
          </children>
       </Pane>
       <TextFlow fx:id="TEST" layoutX="12.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" />
-      <Text fx:id="ingelogdAlsMedewerker" layoutX="289.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="ingelogdAlsMedewerker" layoutX="28.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="MedewerkerVerhuur" layoutX="375.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuur medewerker" />
       <Text fx:id="verhuurdDoorText" layoutX="375.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verhuurd Door : " />
    </children>
