@@ -18,8 +18,10 @@ public class OverzichtController implements Observer {
     
   
 static Product product;
-static ArrayList<Product> producten = new ArrayList<Product>();
+ArrayList<Product> producten = new ArrayList<Product>();
 Seed seed;
+    
+
     @FXML ListView<String> lijstProducten;
 
     @FXML
@@ -31,13 +33,13 @@ Seed seed;
 
     @FXML
     private void initialize() {
+        seed = new Seed();
+        seed.addObserver(this);
         fillList();
         
     }
 
     public void fillList(){
-        seed = new Seed();
-        seed.addObserver(this);
         producten = seed.getProducten();
         
         for(Product p : producten){
@@ -52,7 +54,6 @@ Seed seed;
                 verhuurStatus.setText(producten.get(lijstProducten.getSelectionModel().getSelectedIndex()).getVerhuurStatus() + "");
                 description.setText(producten.get(lijstProducten.getSelectionModel().getSelectedIndex()).getDiscription());
                 product = producten.get(lijstProducten.getSelectionModel().getSelectedIndex());
-                
             }
         });
     }
@@ -65,14 +66,13 @@ Seed seed;
         stage.setTitle(product.getNaam());
         stage.setScene(scene);
         stage.show();
-        
          }
 
+    
     @Override
     public void update(Observable arg0, Object arg1) {
         fillList();
-    }
-
+        }
     }
           
     

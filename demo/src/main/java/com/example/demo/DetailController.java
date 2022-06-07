@@ -123,7 +123,7 @@ public class DetailController implements Observer {
     public void VerhuurButtonClicked(){
         product.setVerhuurStatus(true, new Klant(voornaamKlantTextField.getText(), achternaamKlantTextField.getText()));    
         MedewerkerVerhuur.setText(this.medewerker.getNaam());
-        setGegevensVerhuurd();
+        setProductGegevens();
     }
 
     public void berekenPrijsButtonIsClicked(){

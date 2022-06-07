@@ -40,9 +40,9 @@ public class BeheerController  {
         String selectedItem = listViewSoortenProducten.getSelectionModel().getSelectedItem();
         for(ProductFactory pf : productFactories) {
             if(pf.getNaamTypeProduct().equals(selectedItem)) {
-             seed.addProductenToArray(pf.createProduct(TextField1.getText() , TextField2.getText()));
+                seed.addProductenToArray(pf.createProduct(TextField1.getText() , TextField2.getText()));
             }
-
+                System.out.println("new product toegevoegd");
         }
         
     }

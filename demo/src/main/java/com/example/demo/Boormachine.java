@@ -36,37 +36,37 @@ public class Boormachine extends Product {
     }
 
     @Override
-    String getDiscription() {
+    public String getDiscription() {
         
         return "Boormachine van het type : " + type + " van het merk : " + merk;
     }
 
     @Override
-    String getNaam() {
+    public String getNaam() {
         
         return "Boormachine van het type : " + type + " en van het merk :" + merk;
     }
 
     @Override
-    boolean getVerhuurStatus() {
+    public boolean getVerhuurStatus() {
         
         return verhuurStatus;
     }
 
     @Override
-    void setVerhuurStatus(boolean status , Klant klant) {
+   public void setVerhuurStatus(boolean status , Klant klant) {
         this.verhuurStatus=status;
         this.klant=klant;
         notifyObservers();
     }
 
     @Override
-    String getVerzekeringsInformatie() {
+   public  String getVerzekeringsInformatie() {
         return "De verzekering is : " + verzekering + " euro per dag";
     }    
     
     @Override
-    Klant getKlant() {
+   public Klant getKlant() {
         return klant;
     }
     
