@@ -8,26 +8,22 @@ import java.util.Observer;
 public class PersonenAuto extends Product {
     private String merk;
     private double gewicht;
-    private double verzekering = 0.01;
-    private double prijsPerDag = 50.00;
+
     private boolean verhuurStatus = false;
     Klant klant;
     ArrayList<Observer> observers = new ArrayList<Observer>();
-    public PersonenAuto(String merk, double gewicht, double prijsPerDag, double verzekering){
+
+
+    PrijsCalc pc;
+    public PersonenAuto(String merk, double gewicht ){
         this.merk = merk;
         this.gewicht = gewicht;
-        this.prijsPerDag=prijsPerDag;
-        this.verzekering=verzekering;
-       
+        this.pc = new PrijsCalc(50, 0.01);
     }
 
  
     double getprijs(int aantalDagenHuren, boolean isVerzekerd) {
-        double totaal = prijsPerDag * aantalDagenHuren;
-        if (isVerzekerd) {
-            totaal += (verzekering * gewicht) * aantalDagenHuren;
-        }
-        return totaal;
+        return pc.getPrijs_PersonenAuto(aantalDagenHuren, isVerzekerd, gewicht);
     }
 
     public String getMerk() {
@@ -48,7 +44,7 @@ public class PersonenAuto extends Product {
     }
     @Override
     public String getVerzekeringsInformatie(){
-        return "De verzekering is : " + verzekering + " euro per kg";
+        return "De verzekering is : " + pc.getVerzekering() + " euro per kg";
     }
 
     @Override

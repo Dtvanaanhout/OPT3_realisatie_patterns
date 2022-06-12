@@ -6,26 +6,18 @@ import java.util.Observer;
 public class Boormachine extends Product {
     private String type;
     private String merk;
-    private double verzekering;
-    private double prijsPerDag;
     private boolean verhuurStatus = false;
     Klant klant;
     ArrayList<Observer> observers = new ArrayList<Observer>();
-    
-    public Boormachine(String type, String merk , double prijsPerDag , double verzekering){
+    PrijsCalc pc;
+    public Boormachine(String type, String merk){
         this.type = type;
         this.merk = merk;
-        this.prijsPerDag = prijsPerDag;
-        this.verzekering = verzekering;
-
+        this.pc= new PrijsCalc(5, 1);
     }
 
     public double getprijs(int aantalDagenHuren, boolean isVerzekerd) {
-        double totaal = prijsPerDag * aantalDagenHuren;
-        if (isVerzekerd) {
-            totaal += verzekering * aantalDagenHuren;
-        }
-        return totaal;
+        return pc.getPrijs_Boormachine(aantalDagenHuren, isVerzekerd);
     }
 
     public String getType() {
@@ -62,7 +54,7 @@ public class Boormachine extends Product {
 
     @Override
    public  String getVerzekeringsInformatie() {
-        return "De verzekering is : " + verzekering + " euro per dag";
+        return "De verzekering is : " + pc.getVerzekering() + " euro per dag";
     }    
     
     @Override
