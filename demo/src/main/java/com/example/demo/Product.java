@@ -11,7 +11,5 @@ abstract class Product implements Observable{
     abstract String getVerzekeringsInformatie();
     abstract void setVerhuurStatus(boolean status , Klant klant);
     abstract Klant getKlant();
-    
-   
 }
    

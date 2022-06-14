@@ -11,11 +11,13 @@ public class PrijsCalc {
 
 
     public double getPrijs_PersonenAuto(int aantalDagenHuren, boolean isVerzekerd , double gewicht){
-        double totaal = prijsPerDag * aantalDagenHuren;
-        if (isVerzekerd) {
-            totaal += (verzekering * gewicht) * aantalDagenHuren;
+        double prijs = 0;
+        if(isVerzekerd){
+            prijs += verzekering * gewicht * aantalDagenHuren;
         }
-        return totaal;
+        prijs += aantalDagenHuren * prijsPerDag;
+        
+        return prijs;
     }
 
     public double getVerzekering() {
@@ -38,10 +40,6 @@ public class PrijsCalc {
             totaal += (verzekering * gewicht) * aantalDagenHuren;
         }
         return totaal;
-    }
-
-    public double getVerzekering_VrachtAuto(double laadvermogen , double gewicht){
-        return (verzekering * gewicht) * laadvermogen;
     }
 }
 

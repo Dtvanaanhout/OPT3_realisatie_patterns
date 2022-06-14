@@ -61,7 +61,6 @@ public class Boormachine extends Product {
    public Klant getKlant() {
         return klant;
     }
-    
     @Override
     public void notifyObservers() {
         for (Observer observer : observers) {
@@ -75,6 +74,5 @@ public class Boormachine extends Product {
     public void addObserver(Observer o) {
         observers.add(o);  
     }
-
 }
 

@@ -8,12 +8,10 @@ import java.util.Observer;
 public class PersonenAuto extends Product {
     private String merk;
     private double gewicht;
-
     private boolean verhuurStatus = false;
+    
     Klant klant;
     ArrayList<Observer> observers = new ArrayList<Observer>();
-
-
     PrijsCalc pc;
     public PersonenAuto(String merk, double gewicht ){
         this.merk = merk;
@@ -78,6 +76,4 @@ public class PersonenAuto extends Product {
         observers.add(o);  
     }
 
-
-  
 }
