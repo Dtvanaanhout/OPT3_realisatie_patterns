@@ -65,19 +65,6 @@ public class VrachtAuto extends Product  {
         return klant;
     }
 
-    @Override
-    public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(null, this);
-        }
-        
-    }
-
-
-    @Override
-    public void addObserver(Observer o) {
-        observers.add(o);  
-    }
 
 
     }

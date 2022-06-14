@@ -8,7 +8,6 @@ public class Boormachine extends Product {
     private String merk;
     private boolean verhuurStatus = false;
     Klant klant;
-    ArrayList<Observer> observers = new ArrayList<Observer>();
     PrijsCalc pc;
     public Boormachine(String type, String merk){
         this.type = type;
@@ -61,18 +60,6 @@ public class Boormachine extends Product {
    public Klant getKlant() {
         return klant;
     }
-    @Override
-    public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(null, this);
-        }
-        
-    }
 
-
-    @Override
-    public void addObserver(Observer o) {
-        observers.add(o);  
-    }
 }
 

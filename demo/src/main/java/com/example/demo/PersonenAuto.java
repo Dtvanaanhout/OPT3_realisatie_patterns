@@ -11,7 +11,6 @@ public class PersonenAuto extends Product {
     private boolean verhuurStatus = false;
     
     Klant klant;
-    ArrayList<Observer> observers = new ArrayList<Observer>();
     PrijsCalc pc;
     public PersonenAuto(String merk, double gewicht ){
         this.merk = merk;
@@ -62,18 +61,5 @@ public class PersonenAuto extends Product {
         return klant;
     }
 
-    @Override
-    public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(null, this);
-        }
-        
-    }
-
-
-    @Override
-    public void addObserver(Observer o) {
-        observers.add(o);  
-    }
 
 }
