@@ -6,7 +6,7 @@ import java.util.Observer;
 public class Boormachine extends Product {
     private String type;
     private String merk;
-    private boolean verhuurStatus = false;
+    
     Klant klant;
     PrijsCalc pc;
     public Boormachine(String type, String merk){
@@ -38,16 +38,12 @@ public class Boormachine extends Product {
         return "Boormachine van het type : " + type + " en van het merk :" + merk;
     }
 
-    @Override
-    public boolean getVerhuurStatus() {
-        
-        return verhuurStatus;
-    }
+    
 
     @Override
-   public void setVerhuurStatus(boolean status , Klant klant) {
-        this.verhuurStatus=status;
-        this.klant=klant;
+    void setVerhuurStatus(boolean status , Klant klant) {
+        super.verhuurStatus=status;
+        super.klant=klant;
         notifyObservers();
     }
 
@@ -56,10 +52,6 @@ public class Boormachine extends Product {
         return "De verzekering is : " + pc.getVerzekering() + " euro per dag";
     }    
     
-    @Override
-   public Klant getKlant() {
-        return klant;
-    }
 
 }
 

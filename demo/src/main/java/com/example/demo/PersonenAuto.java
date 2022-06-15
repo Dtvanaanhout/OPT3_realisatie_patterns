@@ -7,9 +7,7 @@ import java.util.Observer;
 
 public class PersonenAuto extends Product {
     private String merk;
-    private double gewicht;
-    private boolean verhuurStatus = false;
-    
+    private double gewicht;    
     Klant klant;
     PrijsCalc pc;
     public PersonenAuto(String merk, double gewicht ){
@@ -45,21 +43,9 @@ public class PersonenAuto extends Product {
     }
 
     @Override
-    boolean getVerhuurStatus() {
-        return verhuurStatus;
-    }
-
-    @Override
     void setVerhuurStatus(boolean status , Klant klant) {
-        this.verhuurStatus=status;
-        this.klant=klant;
+        super.verhuurStatus=status;
+        super.klant=klant;
         notifyObservers();
     }
-
-    @Override
-    Klant getKlant() {
-        return klant;
-    }
-
-
 }

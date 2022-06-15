@@ -38,13 +38,16 @@ public class BeheerController  {
 
     public void addProduct(){
         String selectedItem = listViewSoortenProducten.getSelectionModel().getSelectedItem();
+        Product product;
         for(ProductFactory pf : productFactories) {
             if(pf.getNaamTypeProduct().equals(selectedItem)) {
-                seed.addProductenToArray(pf.createProduct(TextField1.getText() , TextField2.getText()));
+                product = pf.createProduct(TextField1.getText() , TextField2.getText());
+                
+                seed.addProductenToArray(product);
+                System.out.println(product.getNaam());
             }
-                System.out.println("new product toegevoegd");
+            
         }
-        
+        System.out.println("new product toegevoegd");
     }
-
 }
