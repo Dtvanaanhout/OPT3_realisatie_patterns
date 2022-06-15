@@ -42,7 +42,6 @@ public class BeheerController  {
         for(ProductFactory pf : productFactories) {
             if(pf.getNaamTypeProduct().equals(selectedItem)) {
                 product = pf.createProduct(TextField1.getText() , TextField2.getText());
-                
                 seed.addProductenToArray(product);
                 System.out.println(product.getNaam());
             }
