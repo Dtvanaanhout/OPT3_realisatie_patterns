@@ -34,9 +34,9 @@ Seed seed;
     @FXML
     private void initialize() {
         seed = new Seed();
-        seed.addObserver(this);
+        product = seed.getProducten().get(0);
         fillList();
-        
+        product.addObserver(this);
     }
 
     public void fillList(){
@@ -68,10 +68,15 @@ Seed seed;
         stage.show();
          }
 
-    
     @Override
     public void update(Observable arg0, Object arg1) {
+        System.out.println("update");
+        producten.clear();
         fillList();
+        }
+
+        public static Product getProduct(){
+            return product;
         }
     }
           

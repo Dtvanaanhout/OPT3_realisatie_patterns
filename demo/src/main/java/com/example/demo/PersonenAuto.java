@@ -1,7 +1,7 @@
 package com.example.demo;
 
-import java.util.ArrayList;
-import java.util.Observer;
+
+
 
 
 
@@ -10,6 +10,7 @@ public class PersonenAuto extends Product {
     private double gewicht;    
     Klant klant;
     PrijsCalc pc;
+    
     public PersonenAuto(String merk, double gewicht ){
         this.merk = merk;
         this.gewicht = gewicht;

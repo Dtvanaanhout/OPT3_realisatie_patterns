@@ -72,7 +72,7 @@ public class DetailController implements Observer {
 
     @FXML
     void initialize() {
-        product = OverzichtController.product;
+        product = OverzichtController.getProduct();
         medewerker=LoginController.getMedewerkerIngelogd();
         ingelogdAlsMedewerker.setText("Ingelogd als: " + medewerker.getNaam());
         setProductGegevens();
