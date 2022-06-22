@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class OverzichtController implements Observer {
     
   
-Product product;
+static Product product;
 ArrayList<Product> producten = new ArrayList<Product>();
 Seed seed;
     
