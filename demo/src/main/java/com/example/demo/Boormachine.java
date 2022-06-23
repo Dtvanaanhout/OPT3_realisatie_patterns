@@ -13,6 +13,7 @@ public class Boormachine extends Product {
         this.type = type;
         this.merk = merk;
         this.pc= new PrijsCalc(5, 1);
+        super.setInformatie();
     }
 
     public double getprijs(int aantalDagenHuren, boolean isVerzekerd) {
@@ -49,7 +50,7 @@ public class Boormachine extends Product {
 
     @Override
    public  String getVerzekeringsInformatie() {
-        return "De verzekering is : " + pc.getVerzekering() + " euro per dag";
+        return super.verzekeringsInformatie;
     }    
     
 

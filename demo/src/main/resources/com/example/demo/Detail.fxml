@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.DetailController">
    <children>
@@ -19,7 +18,6 @@
       <Text layoutX="28.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten verzekering :" />
       <Text fx:id="prijsPerDagText" layoutX="122.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prijs per dag" />
       <Text fx:id="isVerhuurdText" layoutX="106.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuurstatus text" />
-      <Text fx:id="kostenVerzekeringText" layoutX="159.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten verzekering per dag" />
       <Button fx:id="retourButton" layoutX="199.0" layoutY="332.0" mnemonicParsing="false" onAction="#retourButtonClicked" text="Retour" />
       <Text fx:id="gehuurdDoorTextField" layoutX="28.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="gehuurd door : " />
       <Text fx:id="klantInfoText" layoutX="131.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Klant text" />
@@ -41,9 +39,9 @@
             <Button fx:id="berekenPrijsButton" layoutX="14.0" layoutY="218.0" mnemonicParsing="false" onAction="#berekenPrijsButtonIsClicked" text="bereken verhuurprijs totaal" />
          </children>
       </Pane>
-      <TextFlow fx:id="TEST" layoutX="12.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" />
       <Text fx:id="ingelogdAlsMedewerker" layoutX="28.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="MedewerkerVerhuur" layoutX="375.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="verhuur medewerker" />
       <Text fx:id="verhuurdDoorText" layoutX="375.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verhuurd Door : " />
+      <Text fx:id="kostenVerzekeringText" layoutX="26.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kosten verzekering per dag" textAlignment="CENTER" wrappingWidth="160.93751525878906" />
    </children>
 </Pane>

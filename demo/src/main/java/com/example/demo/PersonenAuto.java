@@ -15,6 +15,7 @@ public class PersonenAuto extends Product {
         this.merk = merk;
         this.gewicht = gewicht;
         this.pc = new PrijsCalc(50, 0.01);
+        super.setInformatie();
     }
 
  
@@ -40,7 +41,7 @@ public class PersonenAuto extends Product {
     }
     @Override
     public String getVerzekeringsInformatie(){
-        return "De verzekering is : " + pc.getVerzekering() + " euro per kg";
+        return super.verzekeringsInformatie;
     }
 
     @Override

@@ -7,19 +7,21 @@ public class VrachtAuto extends Product  {
     
     private double laadvermogen;
     private double gewicht;
+    
     Klant klant;
     ArrayList<Observer> observers = new ArrayList<Observer>();
     PrijsCalc pc;
     
     public VrachtAuto(double laadvermogen, double gewicht){
+        
         this.laadvermogen = laadvermogen;
         this.gewicht = gewicht;
         this.pc=new PrijsCalc(0.10, 0.01);
+        super.setInformatie();
     }
     
     public double getprijs(int aantalDagenHuren , boolean isVerzekerd) {
-        return pc.getPrijs_VrachtAuto(aantalDagenHuren, isVerzekerd, laadvermogen, gewicht);
-        
+        return pc.getPrijs_VrachtAuto(aantalDagenHuren, isVerzekerd, laadvermogen, gewicht);  
     }
 
     public double getLaadvermogen() {
@@ -49,10 +51,9 @@ public class VrachtAuto extends Product  {
         notifyObservers();
     }
 
-    @Override
-    String getVerzekeringsInformatie() {
-        return "De verzekering is : " + pc.getVerzekering() + " euro per kg gewicht";
-    }
+    public String getVerzekeringsInformatie() {
+        return super.verzekeringsInformatie;
+        }
     }
 
 
