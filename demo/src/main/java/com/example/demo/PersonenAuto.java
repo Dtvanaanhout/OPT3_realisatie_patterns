@@ -37,12 +37,9 @@ public class PersonenAuto extends Product {
 
     @Override
     String getNaam() {
-        return "Auto merk : " + merk + " Gewicht :" + gewicht;
+        return super.naam;
     }
-    @Override
-    public String getVerzekeringsInformatie(){
-        return super.verzekeringsInformatie;
-    }
+
 
     @Override
     void setVerhuurStatus(boolean status , Klant klant) {

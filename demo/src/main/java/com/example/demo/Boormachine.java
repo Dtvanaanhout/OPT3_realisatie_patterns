@@ -35,8 +35,8 @@ public class Boormachine extends Product {
 
     @Override
     public String getNaam() {
+        return super.naam;
         
-        return "Boormachine van het type : " + type + " en van het merk :" + merk;
     }
 
     
@@ -46,13 +46,7 @@ public class Boormachine extends Product {
         super.verhuurStatus=status;
         super.klant=klant;
         notifyObservers();
-    }
-
-    @Override
-   public  String getVerzekeringsInformatie() {
-        return super.verzekeringsInformatie;
-    }    
-    
+    } 
 
 }
 

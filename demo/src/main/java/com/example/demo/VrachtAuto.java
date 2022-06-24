@@ -39,7 +39,7 @@ public class VrachtAuto extends Product  {
 
     @Override
     String getNaam() {
-        return  "Vraachtauto " + laadvermogen + " laadvermogen plus een gewicht van :" + gewicht;
+        return super.naam;
     }
 
     
@@ -49,10 +49,6 @@ public class VrachtAuto extends Product  {
         super.verhuurStatus=status;
         super.klant=klant;
         notifyObservers();
-    }
-
-    public String getVerzekeringsInformatie() {
-        return super.verzekeringsInformatie;
         }
     }
 

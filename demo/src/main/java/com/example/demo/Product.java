@@ -10,6 +10,7 @@ abstract class Product implements Observable{
     
     protected String verzekeringsInformatie;
     protected String naam;
+
     protected boolean verhuurStatus = false;
     abstract double getprijs(int aantalDagenHuren , boolean isVerzekerd);
     abstract String getDiscription();
@@ -38,16 +39,21 @@ abstract class Product implements Observable{
         observers.add(o);  
     }
     public void setInformatie() {
-       
-        setVerzekeringInformatieOnbekendProduct();
         if(this instanceof VrachtAuto) {
+            naam = setNaamVrachtAuto();
             verzekeringsInformatie = setVerzekeringInformatieVrachtAuto();
         }
         else if(this instanceof PersonenAuto) {
+            naam = setNaamPersonenAuto();
             verzekeringsInformatie = setVerzekeringInformatiePersononAuto();
         }
         else if (this instanceof Boormachine) {
+            naam = setNaamBoorMachine();
             verzekeringsInformatie = setVerzekeringInformatieBoormachine();
+        }
+        else {
+            verzekeringsInformatie = setVerzekeringInformatieOnbekendProduct();
+            naam = setNaamOnbekend();
         }
 
        
@@ -74,6 +80,19 @@ abstract class Product implements Observable{
         return "De verzekering is niet beschikbaar.";
     }
 
+   public String setNaamOnbekend(){
+    return "Onbekend product";
+   }
+   public String setNaamVrachtAuto(){
+    return  "Vraachtauto " + ((VrachtAuto)this).getGewicht() + " laadvermogen plus een gewicht van :" + ((VrachtAuto)this).getLaadvermogen();
+   }
 
+   public String setNaamPersonenAuto(){
+    return "Auto merk : " +((PersonenAuto) this ).getMerk() + " Gewicht :" + ((PersonenAuto) this ).getGewicht();
+   }
+
+   public String setNaamBoorMachine(){
+    return "Boormachine van het type : " + ((Boormachine)this).getType() + " en van het merk :" + ((Boormachine)this).getMerk();
+   }
 }
    
