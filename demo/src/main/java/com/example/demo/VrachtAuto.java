@@ -33,24 +33,31 @@ public class VrachtAuto extends Product  {
     }
 
     @Override
-    String getDiscription() {
-        return "Vrachtauto met een laad vermogen van: " + laadvermogen + "KG met een gewicht van : " + gewicht + " kg";
+    public void setDiscription() {
+        description =  "Vrachtauto met een laad vermogen van: " + laadvermogen + "KG met een gewicht van : " + gewicht + " kg";
     }
 
     @Override
-    String getNaam() {
-        return super.naam;
-    }
-
-    
-
-    @Override
-    void setVerhuurStatus(boolean status , Klant klant) {
-        super.verhuurStatus=status;
-        super.klant=klant;
+        void setVerhuurStatus(boolean status , Klant klant) {
+            super.verhuurStatus=status;
+            super.klant=klant;
         notifyObservers();
         }
+    @Override
+        public void setVerzekeringInformatie(){
+            verzekeringsInformatie = "De verzekering is afhankelijk van het gewicht van de auto en bedraagt 0,01 euro per kg per dag.";
+        }
+        @Override
+        public void setNaam() {
+            naam =  "Vraachtauto " + gewicht + " laadvermogen plus een gewicht van :" + laadvermogen;
+           }  
+           
+        @Override
+        public String getDescription() {
+               return super.description;
+           }
     }
+ 
 
 
    

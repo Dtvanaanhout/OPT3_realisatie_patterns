@@ -51,7 +51,7 @@ Seed seed;
             @Override
             public void handle(javafx.scene.input.MouseEvent event) {
                 verhuurStatus.setText(producten.get(lijstProducten.getSelectionModel().getSelectedIndex()).getVerhuurStatus() + "");
-                description.setText(producten.get(lijstProducten.getSelectionModel().getSelectedIndex()).getDiscription());
+                description.setText(producten.get(lijstProducten.getSelectionModel().getSelectedIndex()).getDescription());
                 product = producten.get(lijstProducten.getSelectionModel().getSelectedIndex());
             }
         });

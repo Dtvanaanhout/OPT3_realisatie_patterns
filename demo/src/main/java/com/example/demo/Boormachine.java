@@ -26,11 +26,10 @@ public class Boormachine extends Product {
     public String getMerk() {
         return merk;
     }
-
+    
     @Override
-    public String getDiscription() {
-        
-        return "Boormachine van het type : " + type + " van het merk : " + merk;
+    public void setDiscription() {
+        description =  "Boormachine van het type : " + type + " van het merk : " + merk;
     }
 
     @Override
@@ -38,15 +37,26 @@ public class Boormachine extends Product {
         return super.naam;
         
     }
-
-    
-
     @Override
     void setVerhuurStatus(boolean status , Klant klant) {
         super.verhuurStatus=status;
         super.klant=klant;
         notifyObservers();
     } 
+    @Override
+    public void setNaam(){
+            naam =  "Boormachine van het type : " +type + " en van het merk :" + merk;
+           }
 
-}
+    @Override
+    public void setVerzekeringInformatie() {
+        verzekeringsInformatie =  "De verzekering is 1 euro per dag.";
+        }
+
+    @Override
+    String getDescription() {
+        return super.description;
+    }
+    }
+
 

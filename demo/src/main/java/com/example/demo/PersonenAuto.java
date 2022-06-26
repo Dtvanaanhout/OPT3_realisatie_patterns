@@ -15,7 +15,7 @@ public class PersonenAuto extends Product {
         this.merk = merk;
         this.gewicht = gewicht;
         this.pc = new PrijsCalc(50, 0.01);
-        super.setInformatie();
+        setInformatie();
     }
 
  
@@ -31,20 +31,23 @@ public class PersonenAuto extends Product {
     }
 
     @Override
-    String getDiscription() {
+    String getDescription() {
         return "Personenauto van het merk : " + merk + " met een gewicht van : " + gewicht + " kg ";
     }
-
-    @Override
-    String getNaam() {
-        return super.naam;
-    }
-
-
     @Override
     void setVerhuurStatus(boolean status , Klant klant) {
         super.verhuurStatus=status;
         super.klant=klant;
         notifyObservers();
+    }
+    @Override
+    public void setVerzekeringInformatie(){
+        verzekeringsInformatie =  "De verzekering is afhankelijk van het gewicht van de auto en bedraagt 0,01 euro per kg per dag.";
+    }
+
+    @Override
+    public void setNaam(){
+        
+            naam =  "Auto merk : " +merk + " Gewicht :" + gewicht;
     }
 }

@@ -80,7 +80,7 @@ public class DetailController implements Observer {
         }
 
     public void setProductGegevens(){
-        beschrijvingText.setText(product.getDiscription());
+        beschrijvingText.setText(product.getDescription());
         naamProductText.setText(product.getNaam());
         prijsPerDagText.setText(product.getprijs(1, false) + " euro");   
         kostenVerzekeringText.setText(product.getVerzekeringsInformatie());
